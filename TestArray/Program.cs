@@ -1,6 +1,7 @@
 ﻿using System.Runtime.CompilerServices;
 using System;
 using System.Linq;
+using TestArray.Extensions;
 
 namespace TestArray
 {
@@ -16,7 +17,7 @@ namespace TestArray
             var array = Enumerable.Range(0, NmbersCount).Select(_=> Random.Next(NmbersStart, NmbersEnd+1)).ToArray();
             array = array.OrderBy(x => x).ToArray();
 
-            Console.WriteLine(string.Join(", ", array));
+            array.Select((value, index) => $"{index}: {value}").ForEach(Console.WriteLine);
 
             Console.ReadKey();
         }
