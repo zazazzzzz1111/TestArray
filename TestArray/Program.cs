@@ -14,7 +14,9 @@ namespace TestArray
             var array = Enumerable.Range(0, NmbersCount).Select(_=> Random.Next(10)).ToArray();
             array = array.OrderBy(x => x).ToArray();
 
+            Console.WriteLine(string.Join(", ", array));
 
+            Console.ReadKey();
         }
     }
 }
